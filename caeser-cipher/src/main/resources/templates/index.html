@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caeser Cipher</title>
+    <style>
+        /* Reset some default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6e7f7a, #4b5f5b);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #ffeb3b;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, button {
+            padding: 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input {
+            background-color: #fff;
+            color: #333;
+        }
+
+        input:focus {
+            border: 2px solid #ffeb3b;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            background-color: #ffeb3b;
+            color: #333;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c7a800;
+            transform: scale(1.05);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffeb3b;
+            display: none;
+        }
+
+        .result p {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            input, button {
+                font-size: 1rem;
+                padding: 12px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Caeser Cipher</h2>
+        <form action="/process" method="post">
+            <input type="text" name="input" placeholder="Enter your text" required>
+            <input type="number" name="shift" placeholder="Enter shift value" required>
+            <button type="submit" name="action" value="encrypt">Encrypt</button>
+            <button type="submit" name="action" value="decrypt">Decrypt</button>
+        </form>
+        <div class="result">
+            <p th:if="${result != null}">Result: <span th:text="${result}"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to show result if available
+        const resultDiv = document.querySelector('.result');
+        const resultText = document.querySelector('.result p');
+        
+        // Simulate result being rendered dynamically
+        // If result is available, display it
+        if (resultText) {
+            resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
