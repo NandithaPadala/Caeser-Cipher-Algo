@@ -97,10 +97,4 @@ For decryption, the shift is reversed.
 
 - This implementation works only with the English alphabet (uppercase and lowercase letters).
 
-## License
-
-This project is licensed under the MIT License.
-
----
-
 **Enjoy encrypting and decrypting messages with the Caesar Cipher!**
