@@ -92,9 +92,5 @@ For decryption, the shift is reversed.
 - **Non-letters**: Characters like spaces, numbers, and punctuation are not changed.
 - **Shift Values**: Any shift value (positive or negative) is normalized to the range `[0, 25]`.
 - **Empty Input**: Throws an exception if the input string is empty.
-
-## Limitations
-
-- This implementation works only with the English alphabet (uppercase and lowercase letters).
-
+  
 **Enjoy encrypting and decrypting messages with the Caesar Cipher!**
